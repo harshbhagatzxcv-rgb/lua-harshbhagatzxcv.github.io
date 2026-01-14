@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Kumar | Portfolio</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Hamburger Menu Button -->
+<div class="hamburger" id="hamburger">
+    <i class="fa-solid fa-bars"></i>
+</div>
+
+
+<header class="header">
+    <div class="wrapper">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="images/Pfimage.jpg" alt="Harsh Kumar">
+                <h2>Harsh Kumar</h2>
+            </div>
+
+          <ul class="nav">
+    <li><a href="#" id="homeLink">Home</a></li>
+    <li><a href="#" id="aboutLink">About</a></li>
+    <li><a href="#" id="projectsLink">Projects</a></li>
+    <li><a href="#" id="contactLink">Contact</a></li>
+</ul>
+
+
+           <div class="social">
+    <a href="https://www.linkedin.com/in/harsh-kumar-05064538b" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+    </a>
+
+    <a href="https://github.com/harshbhagatzxcv-rgb" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+    </a>
+
+    <a href="https://www.instagram.com/arju_nnq" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="harshbhagatzxcv@gmail.com" target="_blank" aria-label="envelope">
+            </a>
+</div>
+
+        </aside>
+
+        <!-- HERO SECTION -->
+        <section class="hero-content" id="hero">
+            <h4>Welcome</h4>
+            <h1>I'm <span class="input"></span></h1>
+            <h4>Based in Dehradun, India</h4>
+            <a href="#" class="btn" id="knowMeBtn">Know Me</a> 
+
+        </section>
+        <!-- ABOUT SECTION -->
+<section class="about" id="about">
+    <h2>About Me</h2>
+
+    <p>
+        Hi, I’m <strong>Harsh Kumar</strong>, a BTech CSE student based in Dehradun, India.
+        I enjoy coding and working with Linux-based systems . Excited to see where this quirky web-dev and UI-UX journey leads .
+        Checkout my github for my project details. BTW looking forward to become an Arch-user.
+    </p>
+
+    <ul class="about-list">
+        <li>Started algorithmic coding challanges... </li>
+        <li>My journey till now includes 
+            C,shell-scripting, HTML, CSS, JavaScript
+            (learning)
+        </li>
+        <li>Linux User</li>
+        <li>Working on Hyper-spectral Image-classification HSI.</li>
+    </ul>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section class="projects" id="projects">
+    <h2>Projects</h2>
+
+    <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>=>Responsive personal portfolio using HTML, CSS, JavaScript.</p>
+        <a href="#" target="_blank"></a>
+    </div>
+
+    <div class="project-card">
+        <h3>Undergoing Linux Setup Automation</h3>
+        <p>=>Shell scripts to automate Linux environment setup.</p>
+        <a href="#" target="_blank"></a>
+    </div>
+    <div class="project-card">
+        <h3>Restaurant-management system </h3>
+        <p>=>Light coded program for Embedded systems in C lang.</p>
+         <a href="#" target="_blank"></a>
+  </div>
+    <div  class="project-card">
+        <h3>Basic Tic-Tac-Toe Game </h3>
+        <p>=>For practicising GUI implementation undergoing...</p>
+         <a href="#" target="_blank"></a>
+ </div>
+     <div  class="project-card">
+        <h3>Parking Management System </h3>
+        <p>=>Uses shell scripts only..</p>
+         <a href="#" target="_blank"></a>
+ </div>
+     </section>
+
+
+        <!-- CONTACT SECTION -->
+        <section class="contact" id="contact">
+            <h2>Let's Say Hello:</h2>
+            <p>Feel free to reach out for collaborations or just a friendly hello...</p>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="#" target="_blank">Email</a>
+                </div>
+
+                
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="#" target="_blank">LinkedIn</a>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <a href="#" target="_blank">GitHub</a>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fab fa-instagram"></i>
+                    <a href="#" target="_blank">Instagram</a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</header>
+
+<!-- Typed.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+
+<script>
+
+/* Typed.js */
+new Typed(".input", {
+    strings: ["Harsh", "a BTech CSE Student", "a Linux User BTW :)"],
+    typeSpeed: 60,
+    backSpeed: 40,
+    loop: true
+});
+
+/* Section references */
+const sections = {
+    home: document.getElementById("hero"),
+    about: document.getElementById("about"),
+    projects: document.getElementById("projects"),
+    contact: document.getElementById("contact")
+};
+
+/* Show only one section */
+function showSection(sectionName) {
+    Object.values(sections).forEach(section => {
+        section.style.display = "none";
+    });
+
+    sections[sectionName].style.display = "flex";
+}
+
+/* Default section */
+showSection("home");
+
+/* Sidebar navigation */
+document.getElementById("homeLink").addEventListener("click", e => {
+    e.preventDefault();
+    showSection("home");
+});
+
+document.getElementById("aboutLink").addEventListener("click", e => {
+    e.preventDefault();
+    showSection("about");
+});
+
+document.getElementById("projectsLink").addEventListener("click", e => {
+    e.preventDefault();
+    showSection("projects");
+});
+
+document.getElementById("contactLink").addEventListener("click", e => {
+    e.preventDefault();
+    showSection("contact");
+});
+
+/* Know Me button → About */
+document.getElementById("knowMeBtn").addEventListener("click", e => {
+    e.preventDefault();
+    showSection("about");
+});
+const hamburger = document.getElementById("hamburger");
+const sidebar = document.querySelector(".sidebar");
+
+hamburger.addEventListener("click", () => {
+    sidebar.classList.toggle("active");
+});
+
+
+</script>
+
+</body>
+</html>
